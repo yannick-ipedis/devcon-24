@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accessibilité Digital - Présentation devcon 2024</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+        <div class="contact">
+            <h2>Contact</h2>
+            <p aria-hidden="true">* Champs obligatoires</p>
+            <form id="contactForm">
+                <div class="form-element">
+                    <label for="name">Nom <span aria-hidden="true">*</span></label>
+                    <input type="text" id="name" name="name" autocomplete="name" aria-required="true">
+                    <span class="error" id="nameError">Le champ Nom est obligatoire</span>
+                </div>
+
+                <div class="double-line">
+                    <div class="form-element">
+                        <label for="email">Email <span aria-hidden="true">*</span></label>
+                        <input type="text" id="email" name="email" autocomplete="email" aria-required="true">
+                        <span class="error" id="emailError">L'adresse email est incorrecte, format à suivre nom@email.com</span>
+                    </div>
+
+                    <div class="form-element">
+                        <label for="tel">Téléphone <span aria-hidden="true">*</span></label>
+                        <input type="tel" id="tel" name="tel" autocomplete="tel" aria-required="true">
+                        <span class="error" id="telephoneError">Le numéro de téléphone est incorrecte, il doit se composer de 8 chiffres</span>
+                    </div>
+                </div>
+        
+                <fieldset>
+                    <legend>Préférence de contact</legend>
+                    <div class="form-element">
+                        <div>
+                            <input type="radio" id="contactEmail" name="contactPreference" value="email" checked>
+                            <label for="contactEmail">par email</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="contactTelephone" name="contactPreference" value="telephone">
+                            <label for="contactTelephone">par telephone</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-element">
+                    <label for="message">Message <span aria-hidden="true">*</span></label>
+                    <textarea id="message" name="message" aria-required="true"></textarea>
+                    <span class="error" id="messageError">Le message est obligatoire</span>
+                </div>
+        
+                <div class="form-element">
+                    <div>
+                        <input type="checkbox" id="terms" name="terms" aria-required="true">
+                        <label for="terms">J'accepte les <a href="#">conditions générales d'utilisation</a> <span aria-hidden="true">*</span></label>
+                        <span class="error" id="termsError">Les conditions générales d'utilisation sont obligatoires</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="promotions" name="promotions">
+                        <label for="promotions">Je souhaite recevoir des offres promotionnelles par email</label>
+                    </div>
+                </div>
+        
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </main>
+	<script src="script.js"></script>
+  </body>
+</html>
