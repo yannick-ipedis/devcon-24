@@ -10,7 +10,7 @@ body {
     margin: 0 auto;
 }
 
-h2{
+h1{
     color: #BA0E2A;
     font-size: 32px;
     margin-bottom: 5px;
@@ -80,10 +80,16 @@ button {
     cursor: pointer;
     margin-top: 10px;
     font-size: 12px;
+    box-sizing: border-box;
 }
 
 button:hover {
     background-color: #1C4162;
+}
+
+button:focus{
+    outline:2px solid black;
+    border:1px solid white;
 }
 
 .error {

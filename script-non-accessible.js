@@ -19,8 +19,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         if (!field.validate(input.value)) {
             input.classList.add('error-border');
             error.style.display = 'block';
-            input.setAttribute('aria-invalid', 'true');
-            input.setAttribute('aria-describedby', field.errorId);
 
             if (isValid) {
                 firstInvalidField = input;
@@ -30,13 +28,11 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         } else {
             input.classList.remove('error-border');
             error.style.display = 'none';
-            input.removeAttribute('aria-invalid');
-            input.removeAttribute('aria-describedby');
         }
     });
 
     if (!isValid && firstInvalidField) {
-        firstInvalidField.focus();
+        
     } else {
         // Submit the form if valid
         // Uncomment the line below to allow form submission
